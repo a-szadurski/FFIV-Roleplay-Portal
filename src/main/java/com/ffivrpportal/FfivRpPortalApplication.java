@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FfivRoleplayPortalApplication {
+public class FfivRpPortalApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(FfivRoleplayPortalApplication.class, args);
+        SpringApplication.run(FfivRpPortalApplication.class, args);
     }
 
 }
