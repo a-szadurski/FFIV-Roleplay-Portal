@@ -2,7 +2,8 @@ package com.ffivrpportal.model;
 
 import com.ffivrpportal.dto.UserDto;
 import com.ffivrpportal.validation.ValidEmail;
-import lombok.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
