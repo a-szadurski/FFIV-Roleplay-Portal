@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -10,8 +11,13 @@
         <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1"
            href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
         <a class="w3-bar-item w3-button w3-theme-l1" th:href="@{/}">Home</a>
-        <a class="w3-bar-item w3-button w3-hide-small w3-hover-white" th:href="@{/sign-up}">Sign Up</a>
-        <a class="w3-bar-item w3-button w3-hide-small w3-hover-white" th:href="@{/sign-in}">Sign In</a>
+        <div sec:authorize="!isAuthenticated()">
+            <a class="w3-bar-item w3-button w3-hide-small w3-hover-white" th:href="@{/sign-up}">Sign Up</a>
+            <a class="w3-bar-item w3-button w3-hide-small w3-hover-white" th:href="@{/sign-in}">Sign In</a>
+        </div>
+        <div sec:authorize="isAuthenticated()">
+            <a class="w3-bar-item w3-button w3-hide-small w3-hover-white" th:href="@{/sign-out}">Sign Out</a>
+        </div>
     </div>
 </div>
 

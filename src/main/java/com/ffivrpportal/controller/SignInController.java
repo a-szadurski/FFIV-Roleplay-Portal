@@ -13,15 +13,13 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 public class SignInController {
 
-    private final Authentication AUTHENTICATION = SecurityContextHolder.getContext().getAuthentication();
-
     private String authenticate(Authentication authentication) {
         if (authentication != null && authentication.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_USER"))) {
-            return "redirect:/user/home";
+            return "redirect:/";
         }
 
         if (authentication != null && authentication.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN"))) {
-            return "redirect:/admin/home";
+            return "redirect:/";
         }
         return "sign-in";
     }
@@ -29,7 +27,7 @@ public class SignInController {
     @GetMapping("/sign-in")
     public String loginPage() {
 
-        return authenticate(AUTHENTICATION);
+        return authenticate(SecurityContextHolder.getContext().getAuthentication());
     }
 
 
@@ -43,8 +41,9 @@ public class SignInController {
     @GetMapping("/sign-out")
     public String logoutPage(HttpServletRequest request, HttpServletResponse response) {
 
-        if (AUTHENTICATION != null) {
-            new SecurityContextLogoutHandler().logout(request, response, AUTHENTICATION);
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth != null) {
+            new SecurityContextLogoutHandler().logout(request, response, auth);
         }
         return "redirect:/";
     }
