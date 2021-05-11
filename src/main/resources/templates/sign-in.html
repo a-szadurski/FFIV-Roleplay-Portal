@@ -10,7 +10,15 @@
 <div layout:fragment="content">
     <div class="w3-row w3-padding-64">
         <div class="w3-container">
-            <h1>TODO sign-in page</h1>
+            <h1>Login page</h1>
+            <p th:if="${loginError}" class="error">Wrong user or password</p>
+            <form th:action="@{/sign-in}" method="post">
+                <label for="username">Username</label>:
+                <input type="text" id="username" name="username" autofocus="autofocus" /> <br />
+                <label for="password">Password</label>:
+                <input type="password" id="password" name="password" /> <br />
+                <input type="submit" value="Log in" />
+            </form>
         </div>
     </div>
 </div>
