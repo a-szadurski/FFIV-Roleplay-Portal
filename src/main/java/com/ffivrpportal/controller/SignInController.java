@@ -13,21 +13,18 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 public class SignInController {
 
-    final String REDIRECT_USER = "redirect:/user/home";
-    final String REDIRECT_ADMIN = "redirect:/admin/home";
     private final Authentication AUTHENTICATION = SecurityContextHolder.getContext().getAuthentication();
 
     private String authenticate(Authentication authentication) {
         if (authentication != null && authentication.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_USER"))) {
-            return REDIRECT_USER;
+            return "redirect:/user/home";
         }
 
         if (authentication != null && authentication.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN"))) {
-            return REDIRECT_ADMIN;
+            return "redirect:/admin/home";
         }
         return "sign-in";
     }
-
 
     @GetMapping("/sign-in")
     public String loginPage() {
