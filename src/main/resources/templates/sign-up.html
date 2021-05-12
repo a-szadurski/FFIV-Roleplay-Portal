@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en"
       layout:decorate="~{page_layout/layout}"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>
@@ -10,7 +11,21 @@
 <div layout:fragment="content">
     <div class="w3-row w3-padding-64">
         <div class="w3-container">
-            <h1>TODO signup page</h1>
+            <form th:object="${user}" method="POST" enctype="utf8">
+                <div>
+                    <label>email</label>
+                    <input type="email" th:field="*{email}"/>
+                </div>
+                <div>
+                    <label>password</label>
+                    <input type="password" th:field="*{password}"/>
+                </div>
+                <div>
+                    <label>confirm</label>
+                    <input type="password" th:field="*{matchingPassword}"/>
+                </div>
+                <button type="submit">submit</button>
+            </form>
         </div>
     </div>
 </div>
