@@ -1,9 +1,7 @@
 package com.ffivrpportal.model;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -11,10 +9,8 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "roles")
-@Getter
-@Setter
-@ToString
-@EqualsAndHashCode
+@Data
+@NoArgsConstructor
 public class Role {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
