@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 public class SignInController {
 
+    private final String SIGN_IN_PAGE = "user/sign-in";
+
     private String authenticate(Authentication authentication) {
         if (authentication != null && authentication.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_USER"))) {
             return "redirect:/";
@@ -21,7 +23,7 @@ public class SignInController {
         if (authentication != null && authentication.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN"))) {
             return "redirect:/";
         }
-        return "sign-in";
+        return SIGN_IN_PAGE;
     }
 
     @GetMapping("/sign-in")
@@ -35,7 +37,7 @@ public class SignInController {
     public String loginWithError(Model model) {
 
         model.addAttribute("loginError", true);
-        return "sign-in";
+        return SIGN_IN_PAGE;
     }
 
     @GetMapping("/sign-out")

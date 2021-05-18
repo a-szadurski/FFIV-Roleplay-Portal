@@ -17,6 +17,7 @@ import javax.validation.Valid;
 public class SignUpController {
 
     private final UserService userService;
+    private final String SIGN_UP_PAGE = "user/sign-up";
 
     public SignUpController(UserService userService) {
         this.userService = userService;
@@ -26,7 +27,7 @@ public class SignUpController {
     public String displayPage(Model model) {
 
         model.addAttribute("user", new UserDto());
-        return "sign-up";
+        return SIGN_UP_PAGE;
     }
 
     @PostMapping
@@ -34,7 +35,7 @@ public class SignUpController {
 
         if (result.hasErrors()) {
             model.addAttribute("user", new UserDto());
-            return "sign-up";
+            return SIGN_UP_PAGE;
         }
 
         userService.saveUser(userDto);
