@@ -4,7 +4,7 @@ import com.ffivrpportal.repository.PlayerCharacterRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PlayerCharacterServiceImpl implements PlayerCharacterService{
+public class PlayerCharacterServiceImpl implements PlayerCharacterService {
 
     private final PlayerCharacterRepository playerCharacterRepository;
 

@@ -18,7 +18,7 @@ public class AddCharacterController {
     }
 
     @GetMapping
-    public String displayPage(Model model){
+    public String displayPage(Model model) {
 
         model.addAttribute("newCharacter", new PlayerCharacterDto());
         return "user/add-character";

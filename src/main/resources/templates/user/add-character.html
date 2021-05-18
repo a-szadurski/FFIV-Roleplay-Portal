@@ -1,17 +1,43 @@
 <!DOCTYPE html>
 <html lang="en"
       layout:decorate="~{page_layout/layout}"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
 </head>
 <body>
 <div layout:fragment="content">
-    <div class="w3-row w3-padding-64">
-        <div class="w3-container">
-            <h1>TODO add character page</h1>
-        </div>
+    <div class="w3-row w3-padding-64 w3-container">
+        <form th:object="${newCharacter}" method="POST" enctype="utf8">
+            <div>
+                <label>First Name
+                <input type="text" th:field="*{firstName}"/></label>
+            </div>
+            <div>
+                <label>Last Name
+                <input type="text" th:field="*{lastName}"/></label>
+            </div>
+            <div>
+                <label>Server
+                <input type="text" th:field="*{server}"/></label>
+            </div>
+            <div>
+                <label>Data Center
+                <input type="text" th:field="*{dataCenter}"/></label>
+            </div>
+            <button type="submit">submit</button>
+        </form>
+    </div>
+    <div class="w3-row w3-padding-64 w3-container">
+        <form th:object="${newCharacter}" method="POST" enctype="utf8">
+            <div>
+                <label>Lodestone link/id
+                <input type="text" th:field="*{lodestoneId}"/></label>
+            </div>
+            <button type="submit">submit</button>
+        </form>
     </div>
 </div>
 </body>
