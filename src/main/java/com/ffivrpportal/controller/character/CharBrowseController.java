@@ -1,4 +1,4 @@
-package com.ffivrpportal.controller;
+package com.ffivrpportal.controller.character;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

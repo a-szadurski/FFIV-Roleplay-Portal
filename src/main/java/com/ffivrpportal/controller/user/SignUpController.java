@@ -1,4 +1,4 @@
-package com.ffivrpportal.controller;
+package com.ffivrpportal.controller.user;
 
 import com.ffivrpportal.dto.UserDto;
 import com.ffivrpportal.service.UserService;

@@ -1,4 +1,4 @@
-package com.ffivrpportal.controller;
+package com.ffivrpportal.controller.user;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

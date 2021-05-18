@@ -1,4 +1,4 @@
-package com.ffivrpportal.controller;
+package com.ffivrpportal.controller.character;
 
 import com.ffivrpportal.dto.PlayerCharacterDto;
 import com.ffivrpportal.service.PlayerCharacterService;

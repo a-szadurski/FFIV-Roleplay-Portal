@@ -1,4 +1,4 @@
-package com.ffivrpportal.controller;
+package com.ffivrpportal.controller.character;
 
 import com.ffivrpportal.service.ServersListService;
 import org.springframework.web.bind.annotation.RequestMapping;
