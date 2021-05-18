@@ -17,7 +17,9 @@
     <a class="w3-bar-item w3-button w3-hover-black" th:href="@{/charbrowse}">Browse Characters</a>
     <a class="w3-bar-item w3-button w3-hover-black" th:href="@{/partners}">Community Partners</a>
     <div sec:authorize="isAuthenticated()">
-    <a class="w3-bar-item w3-button w3-hover-black" th:href="@{/user/add}">Add Character</a></div>
+        <a class="w3-bar-item w3-button w3-hover-black" th:href="@{/user/add}">Add Character</a></div>
+    <div sec:authorize="isAuthenticated()">
+        <a class="w3-bar-item w3-button w3-hover-black" th:href="@{/user/profile}">Profile</a></div>
 </nav>
 </body>
 </html>
