@@ -14,7 +14,7 @@ public class PlayerCharacterDto {
     private String lastName;
     private String server;
     private String dataCenter;
-    private Integer lodestoneId;
+    private String lodestoneId;
     private String description;
     private String bio;
     private String oocInfo;
