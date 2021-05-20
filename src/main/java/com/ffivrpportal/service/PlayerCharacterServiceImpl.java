@@ -1,6 +1,7 @@
 package com.ffivrpportal.service;
 
 import com.ffivrpportal.dto.PlayerCharacterDto;
+import com.ffivrpportal.model.PlayerCharacter;
 import com.ffivrpportal.repository.PlayerCharacterRepository;
 import org.springframework.stereotype.Service;
 
@@ -22,5 +23,11 @@ public class PlayerCharacterServiceImpl implements PlayerCharacterService {
         lodestoneId.replaceAll("[^0-9]", "");
 
 
+    }
+
+    @Override
+    public void saveCharacter(PlayerCharacterDto playerCharacterDto) {
+
+        playerCharacterRepository.save(new PlayerCharacter(playerCharacterDto));
     }
 }

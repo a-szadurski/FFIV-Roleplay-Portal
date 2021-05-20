@@ -38,7 +38,11 @@ public class AddCharacterController {
             return "user/add-character";
         }
 
-        playerCharacterService.findByLodestoneId(playerCharacterDto);
-        return "redirect:/";
+        if(playerCharacterDto.getLodestoneId() != null) {
+            playerCharacterService.findByLodestoneId(playerCharacterDto);
+            return "redirect:/user/add/step2";
+        }
+        playerCharacterService.saveCharacter(playerCharacterDto);
+        return "redirect:/user/characters";
     }
 }

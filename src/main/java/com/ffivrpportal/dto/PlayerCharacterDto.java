@@ -1,6 +1,7 @@
 package com.ffivrpportal.dto;
 
 import com.ffivrpportal.model.Job;
+import com.ffivrpportal.model.PlayerCharacter;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -22,4 +23,18 @@ public class PlayerCharacterDto {
     private Job secondaryJob;
     private Job tertiaryJob;
     private String jobInfo;
+
+    public PlayerCharacterDto(PlayerCharacter playerCharacter){
+        this.id = playerCharacter.getId();
+        this.firstName = playerCharacter.getFirstName();
+        this.lastName = playerCharacter.getLastName();
+        this.server = playerCharacter.getServer();
+        this.dataCenter = playerCharacter.getDataCenter();
+        this.bio = playerCharacter.getBio();
+        this.oocInfo = playerCharacter.getOocInfo();
+        this.mainJob = playerCharacter.getMainJob();
+        this.secondaryJob = playerCharacter.getSecondaryJob();
+        this.tertiaryJob = playerCharacter.getTertiaryJob();
+        this.jobInfo = playerCharacter.getJobInfo();
+    }
 }
