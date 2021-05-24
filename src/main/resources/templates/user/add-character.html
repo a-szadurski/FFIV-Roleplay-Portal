@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"
-      layout:decorate="~{page_layout/layout}"
+      layout:decorate="~{page_layout/layout-user}"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -8,8 +8,7 @@
     <title>Home</title>
 </head>
 <body>
-<div layout:fragment="content">
-    <div class="w3-row w3-padding-64 w3-container">
+<div class="container-fluid" layout:fragment="content">
         <form th:object="${newCharacter}" method="POST" enctype="utf8">
             <div>
                 <label>First Name
@@ -29,8 +28,7 @@
             </div>
             <button type="submit">submit</button>
         </form>
-    </div>
-    <div class="w3-row w3-padding-64 w3-container">
+
         <form th:object="${newCharacter}" method="POST" enctype="utf8">
             <div>
                 <label>Lodestone link/id
@@ -38,7 +36,7 @@
             </div>
             <button type="submit">submit</button>
         </form>
-    </div>
+
 </div>
 </body>
 </html>

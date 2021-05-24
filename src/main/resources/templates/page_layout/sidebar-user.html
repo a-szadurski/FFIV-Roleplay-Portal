@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- Sidebar-->
+<div class="border-end bg-white" id="sidebar-wrapper" th:fragment="sidebar-user">
+    <div class="sidebar-heading border-bottom bg-light">FFXIV RP Portal</div>
+    <div class="list-group list-group-flush">
+        <a class="list-group-item list-group-item-action list-group-item-light p-3"
+           th:href="@{/about}">About</a>
+        <a class="list-group-item list-group-item-action list-group-item-light p-3"
+           th:href="@{/charbrowse}">Browse Characters</a>
+        <a class="list-group-item list-group-item-action list-group-item-light p-3"
+           th:href="@{/partners}">Community Partners</a>
+        <div sec:authorize="isAuthenticated()">
+            <a class="list-group-item list-group-item-action list-group-item-light p-3"
+               th:href="@{/user/add}">Add Character</a>
+        </div>
+        <div sec:authorize="isAuthenticated()">
+            <a class="list-group-item list-group-item-action list-group-item-light p-3"
+               th:href="@{/user/characters}">My Characters</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

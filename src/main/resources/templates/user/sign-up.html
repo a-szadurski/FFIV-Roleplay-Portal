@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"
-      layout:decorate="~{page_layout/layout}"
+      layout:decorate="~{page_layout/layout-user}"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -8,9 +8,7 @@
     <title>Sign Up</title>
 </head>
 <body>
-<div layout:fragment="content">
-    <div class="w3-row w3-padding-64">
-        <div class="w3-container">
+<div class="container-fluid" layout:fragment="content">
             <form th:object="${user}" method="POST" enctype="utf8">
                 <div>
                     <label>email</label>
@@ -26,8 +24,6 @@
                 </div>
                 <button type="submit">submit</button>
             </form>
-        </div>
-    </div>
 </div>
 </body>
 </html>
