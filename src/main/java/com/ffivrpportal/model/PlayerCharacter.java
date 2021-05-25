@@ -36,6 +36,9 @@ public class PlayerCharacter {
 
     private String jobInfo;
 
+    @ManyToOne
+    private User user;
+
     public PlayerCharacter(PlayerCharacterDto playerCharacterDto){
         this.id = playerCharacterDto.getId();
         this.firstName = playerCharacterDto.getFirstName();
@@ -48,6 +51,7 @@ public class PlayerCharacter {
         this.secondaryJob = playerCharacterDto.getSecondaryJob();
         this.tertiaryJob = playerCharacterDto.getTertiaryJob();
         this.jobInfo = playerCharacterDto.getJobInfo();
+        this.user = playerCharacterDto.getUser();
     }
 
 }

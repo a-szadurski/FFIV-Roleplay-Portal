@@ -29,6 +29,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public UserDto findByEmailDto(String email) {
+        return new UserDto(userRepository.findByEmail(email));
+    }
+
+    @Override
     public User findByEmail(String email) {
         return userRepository.findByEmail(email);
     }
@@ -96,6 +101,10 @@ public class UserServiceImpl implements UserService {
         userRepository.deleteById(id);
     }
 
+    @Override
+    public User setUser(UserDto userDto) {
+        return userRepository.findByEmail(userDto.getEmail());
+    }
 
     private boolean emailExists(final String email) {
         return userRepository.findByEmail(email) != null;

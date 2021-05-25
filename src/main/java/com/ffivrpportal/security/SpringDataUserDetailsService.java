@@ -1,6 +1,7 @@
 package com.ffivrpportal.security;
 
 
+import com.ffivrpportal.dto.UserDto;
 import com.ffivrpportal.model.User;
 import com.ffivrpportal.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,7 @@ public class SpringDataUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String email) {
+
         User user = userService.findByEmail(email);
 
         if (user == null) {
@@ -33,6 +35,7 @@ public class SpringDataUserDetailsService implements UserDetailsService {
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
         user.getRoles().forEach(r ->
                 grantedAuthorities.add(new SimpleGrantedAuthority(r.getName())));
+
         return new org.springframework.security.core.userdetails.User(
                 user.getEmail(), user.getPassword(), grantedAuthorities);
     }

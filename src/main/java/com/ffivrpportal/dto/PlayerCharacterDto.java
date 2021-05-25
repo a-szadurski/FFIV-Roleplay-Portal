@@ -2,6 +2,7 @@ package com.ffivrpportal.dto;
 
 import com.ffivrpportal.model.Job;
 import com.ffivrpportal.model.PlayerCharacter;
+import com.ffivrpportal.model.User;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -23,6 +24,7 @@ public class PlayerCharacterDto {
     private Job secondaryJob;
     private Job tertiaryJob;
     private String jobInfo;
+    private User user;
 
     public PlayerCharacterDto(PlayerCharacter playerCharacter){
         this.id = playerCharacter.getId();
@@ -36,5 +38,6 @@ public class PlayerCharacterDto {
         this.secondaryJob = playerCharacter.getSecondaryJob();
         this.tertiaryJob = playerCharacter.getTertiaryJob();
         this.jobInfo = playerCharacter.getJobInfo();
+        this.user = playerCharacter.getUser();
     }
 }

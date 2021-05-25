@@ -8,7 +8,9 @@ import java.util.List;
 
 public interface UserService {
 
+
     User findByEmail(String email);
+    UserDto findByEmailDto(String email);
 
     void saveUser(UserDto userDto);
 
@@ -21,4 +23,6 @@ public interface UserService {
     UserDto findById(Long id);
 
     void deleteById(Long id);
+
+    User setUser(UserDto userDto);
 }
