@@ -26,7 +26,7 @@ public class PlayerCharacterDto {
     private String jobInfo;
     private User user;
 
-    public PlayerCharacterDto(PlayerCharacter playerCharacter){
+    public PlayerCharacterDto(PlayerCharacter playerCharacter) {
         this.id = playerCharacter.getId();
         this.firstName = playerCharacter.getFirstName();
         this.lastName = playerCharacter.getLastName();

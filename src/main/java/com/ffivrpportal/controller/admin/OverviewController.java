@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class OverviewController {
 
     @GetMapping
-    public String displayPage(){
+    public String displayPage() {
         return "admin/overview";
     }
 }

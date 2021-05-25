@@ -43,12 +43,12 @@ public class AddCharacterController {
             return "user/add-character";
         }
 
-        if(playerCharacterDto.getLodestoneId() != null) {
+        if (playerCharacterDto.getLodestoneId() != null) {
             playerCharacterService.findByLodestoneId(playerCharacterDto);
             return "redirect:/user/add/step2";
         }
         UserDto userDto = userService.findByEmailDto(principal.getName());
-        if(userDto != null) {
+        if (userDto != null) {
             playerCharacterDto.setUser(userService.setUser(userDto));
             playerCharacterService.saveCharacter(playerCharacterDto);
         }

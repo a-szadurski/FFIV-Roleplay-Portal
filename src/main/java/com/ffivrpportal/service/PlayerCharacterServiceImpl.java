@@ -19,8 +19,8 @@ public class PlayerCharacterServiceImpl implements PlayerCharacterService {
 
         String lodestoneId = playerCharacterDto.getLodestoneId();
 
-        if(!lodestoneId.isBlank() && !lodestoneId.isEmpty())
-        lodestoneId.replaceAll("[^0-9]", "");
+        if (!lodestoneId.isBlank() && !lodestoneId.isEmpty())
+            lodestoneId.replaceAll("[^0-9]", "");
 
 
     }

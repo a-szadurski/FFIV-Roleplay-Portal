@@ -20,7 +20,7 @@ public class UserCharactersController {
     }
 
     @GetMapping
-    public String displayPage(Model model){
+    public String displayPage(Model model) {
         return "user/user-characters";
     }
 }

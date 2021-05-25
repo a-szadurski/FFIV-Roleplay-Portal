@@ -1,7 +1,6 @@
 package com.ffivrpportal.security;
 
 
-import com.ffivrpportal.dto.UserDto;
 import com.ffivrpportal.model.User;
 import com.ffivrpportal.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

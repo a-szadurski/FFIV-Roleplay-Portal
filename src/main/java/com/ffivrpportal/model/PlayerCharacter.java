@@ -39,7 +39,7 @@ public class PlayerCharacter {
     @ManyToOne
     private User user;
 
-    public PlayerCharacter(PlayerCharacterDto playerCharacterDto){
+    public PlayerCharacter(PlayerCharacterDto playerCharacterDto) {
         this.id = playerCharacterDto.getId();
         this.firstName = playerCharacterDto.getFirstName();
         this.lastName = playerCharacterDto.getLastName();

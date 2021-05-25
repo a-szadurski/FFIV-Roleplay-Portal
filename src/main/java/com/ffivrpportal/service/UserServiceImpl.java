@@ -29,13 +29,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDto findByEmailDto(String email) {
-        return new UserDto(userRepository.findByEmail(email));
+    public User findByEmail(String email) {
+        return userRepository.findByEmail(email);
     }
 
     @Override
-    public User findByEmail(String email) {
-        return userRepository.findByEmail(email);
+    public UserDto findByEmailDto(String email) {
+        return new UserDto(userRepository.findByEmail(email));
     }
 
     @Override
