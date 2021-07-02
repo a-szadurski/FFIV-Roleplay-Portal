@@ -5,6 +5,8 @@ import com.ffivrpportal.model.PlayerCharacter;
 import com.ffivrpportal.repository.PlayerCharacterRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PlayerCharacterServiceImpl implements PlayerCharacterService {
 
@@ -20,7 +22,7 @@ public class PlayerCharacterServiceImpl implements PlayerCharacterService {
         String lodestoneId = playerCharacterDto.getLodestoneId();
 
         if (!lodestoneId.isBlank() && !lodestoneId.isEmpty())
-            lodestoneId.replaceAll("[^0-9]", "");
+            lodestoneId = lodestoneId.replaceAll("[^0-9]", "");
 
 
     }
@@ -29,5 +31,11 @@ public class PlayerCharacterServiceImpl implements PlayerCharacterService {
     public void saveCharacter(PlayerCharacterDto playerCharacterDto) {
 
         playerCharacterRepository.save(new PlayerCharacter(playerCharacterDto));
+    }
+
+    @Override
+    public List<PlayerCharacterDto> findPlayerCharactersByUserId(Long id) {
+
+        return null;
     }
 }
